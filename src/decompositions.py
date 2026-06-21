@@ -27,20 +27,7 @@ from typing import Dict, Tuple
 # ────────────────────────────────────────────────────────────
 
 def toffoli_6cx_standard() -> QuantumCircuit:
-    """
-    Standard textbook Toffoli using 6 CX gates.
 
-    Implements the exact CCX unitary with no phase approximations.
-    This is essentially what Qiskit uses internally by default.
-
-    CX pairs used (in order): (1,2), (0,2), (1,2), (0,2), (0,1), (0,1)
-      → Qubit pair (1,2) appears 2 times
-      → Qubit pair (0,2) appears 2 times
-      → Qubit pair (0,1) appears 2 times
-
-    Reference: Barenco et al., "Elementary gates for quantum computation" (1995)
-               Nielsen & Chuang, Figure 4.9
-    """
     qc = QuantumCircuit(3, name="toffoli_6cx_std")
 
     qc.h(2)
